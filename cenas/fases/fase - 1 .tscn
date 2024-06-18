@@ -1,0 +1,140 @@
+[gd_scene load_steps=7 format=3 uid="uid://co4ktxnnfnk2c"]
+
+[ext_resource type="Texture2D" uid="uid://b1vg57ohyn835" path="res://img/bg_espaco.jpg" id="1_q85it"]
+[ext_resource type="FontFile" uid="uid://b6lbh1sjsx8w1" path="res://Perfect DOS VGA 437 Win.ttf" id="2_6ybye"]
+[ext_resource type="Script" path="res://cenas/fases/Button2.gd" id="2_60n2k"]
+[ext_resource type="Texture2D" uid="uid://cx8870ykl50ql" path="res://img/OIG3.WZ-removebg-preview (1).png" id="2_tvik7"]
+[ext_resource type="Script" path="res://scripts/acerto_fase_1.gd" id="3_10flm"]
+[ext_resource type="AudioStream" uid="uid://ccabpf6ipgq0k" path="res://sounds/Quiz Background.mp3" id="6_r0cap"]
+
+[node name="fase1" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_q85it")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 140.0
+offset_top = -51.0
+offset_right = -116.0
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tvik7")
+expand_mode = 1
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 36.0
+offset_right = 793.0
+offset_bottom = 606.0
+color = Color(0.188235, 0.188235, 0.188235, 0.937255)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 51.0
+offset_right = 777.0
+offset_bottom = 248.0
+theme_override_fonts/font = ExtResource("2_6ybye")
+theme_override_font_sizes/font_size = 30
+text = "      FASE MARTE
+                  Qual é a negação da proposição 'P: Marte é conhecido como o Planeta Vermelho'?"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="Label"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 137.5
+offset_bottom = 193.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_6ybye")
+theme_override_font_sizes/font_size = 20
+text = "A) ¬P: Marte não é conhecido
+como o Planeta Vermelho"
+alignment = 0
+text_overrun_behavior = 2
+script = ExtResource("3_10flm")
+
+[node name="Button2" type="Button" parent="Label"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 205.5
+offset_bottom = 253.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_6ybye")
+theme_override_font_sizes/font_size = 20
+text = "B) P: Marte é conhecido
+como o Planeta Azul
+"
+alignment = 0
+text_overrun_behavior = 2
+script = ExtResource("2_60n2k")
+
+[node name="Button3" type="Button" parent="Label"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 264.5
+offset_bottom = 312.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_6ybye")
+theme_override_font_sizes/font_size = 20
+text = "C) P: Marte é conhecido
+como o Planeta Vermelho
+"
+alignment = 0
+text_overrun_behavior = 2
+script = ExtResource("2_60n2k")
+
+[node name="Button4" type="Button" parent="Label"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 323.5
+offset_bottom = 371.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_6ybye")
+theme_override_font_sizes/font_size = 20
+text = "D) ¬P: Marte é conhecido
+como o Planeta Verde"
+alignment = 0
+text_overrun_behavior = 2
+script = ExtResource("2_60n2k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_r0cap")
+volume_db = -20.0
+autoplay = true
+
+[connection signal="pressed" from="Label/Button" to="Label/Button" method="_on_btn2_play_pressed"]
+[connection signal="pressed" from="Label/Button2" to="Label/Button2" method="_on_btn2_play_pressed"]
+[connection signal="pressed" from="Label/Button3" to="Label/Button3" method="_on_btn2_play_pressed"]
+[connection signal="pressed" from="Label/Button4" to="Label/Button4" method="_on_btn2_play_pressed"]

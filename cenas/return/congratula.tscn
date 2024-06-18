@@ -1,0 +1,157 @@
+[gd_scene load_steps=24 format=3 uid="uid://38t6n70c1yks"]
+
+[ext_resource type="Texture2D" uid="uid://cjdyljawg14so" path="res://img/fundo-do-planeta-terra.jpg" id="1_hn8sl"]
+[ext_resource type="Texture2D" uid="uid://b8l2se4j6bxaw" path="res://animações/astro1.png" id="3_h4j4u"]
+[ext_resource type="FontFile" uid="uid://b4cqvb4syyox4" path="res://CorporationGamesStraight.otf" id="4_4y72n"]
+[ext_resource type="Texture2D" uid="uid://cll4aaefyqfcj" path="res://animações/astro2.png" id="4_dtur2"]
+[ext_resource type="Texture2D" uid="uid://crc8u8x68e3wb" path="res://animações/astro3.png" id="5_7jnm4"]
+[ext_resource type="Texture2D" uid="uid://qbe7buo74tpu" path="res://seta retornar.png" id="5_8b33u"]
+[ext_resource type="Script" path="res://cenas/return/INICIAR.gd" id="6_e3smc"]
+[ext_resource type="Texture2D" uid="uid://cma63uxqhk6ii" path="res://animações/astro4.png" id="6_lcds2"]
+[ext_resource type="Texture2D" uid="uid://d2winyk3th0hh" path="res://animações/astro5.png" id="7_qlnfa"]
+[ext_resource type="Texture2D" uid="uid://dopsyvxhk4ycd" path="res://animações/astro6.png" id="8_y2ydp"]
+[ext_resource type="Texture2D" uid="uid://bin1fqli7k51t" path="res://animações/astro7.png" id="9_52ut0"]
+[ext_resource type="Texture2D" uid="uid://r7adsncqclrb" path="res://animações/astro9.png" id="10_jtjoh"]
+[ext_resource type="Texture2D" uid="uid://dswbo1o5wf5ji" path="res://animações/astro8.png" id="11_2cwtn"]
+[ext_resource type="Texture2D" uid="uid://bk4pnts38o571" path="res://animações/astro10.png" id="12_ile71"]
+[ext_resource type="Texture2D" uid="uid://d4feffxupjait" path="res://animações/astro11.png" id="13_40urt"]
+[ext_resource type="Texture2D" uid="uid://3btkpl61qmyx" path="res://animações/astro13.png" id="14_odl14"]
+[ext_resource type="Texture2D" uid="uid://do25gmscso7vy" path="res://animações/astro12.png" id="15_prfrb"]
+[ext_resource type="Texture2D" uid="uid://crof7ddb740h3" path="res://animações/astro14.png" id="16_rludr"]
+[ext_resource type="Texture2D" uid="uid://briss53vnmlw4" path="res://animações/astro15.png" id="17_nf7ld"]
+[ext_resource type="Texture2D" uid="uid://b7vrmhl8n1qs3" path="res://animações/astro17.png" id="18_7shi6"]
+[ext_resource type="Texture2D" uid="uid://srm6b8ox45jf" path="res://animações/astro16.png" id="19_qlg4y"]
+[ext_resource type="AudioStream" uid="uid://bph143vogulhy" path="res://sounds/Ending Theme - Super Mario_ World (320) (mp3cut.net).mp3" id="22_vrexi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_keha5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_h4j4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dtur2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7jnm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lcds2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qlnfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y2ydp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_52ut0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jtjoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2cwtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ile71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_40urt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_odl14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_prfrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_rludr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nf7ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_7shi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qlg4y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Congratula" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.957618, 0.696075, 0.778948, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 642.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hn8sl")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 87.0
+offset_right = 774.0
+offset_bottom = 187.0
+theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_fonts/font = ExtResource("4_4y72n")
+theme_override_font_sizes/font_size = 60
+text = "OBRIGADO !!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(579, 341)
+scale = Vector2(1.095, 1)
+sprite_frames = SubResource("SpriteFrames_keha5")
+autoplay = "default"
+frame_progress = 0.555635
+
+[node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 1016.0
+offset_top = 510.0
+offset_right = 1144.0
+offset_bottom = 638.0
+icon = ExtResource("5_8b33u")
+flat = true
+script = ExtResource("6_e3smc")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ColorRect"]
+stream = ExtResource("22_vrexi")
+volume_db = -1.962
+autoplay = true
+
+[node name="creditos" type="Label" parent="."]
+offset_left = 30.0
+offset_top = 559.0
+offset_right = 1075.0
+offset_bottom = 690.0
+theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_fonts/font = ExtResource("4_4y72n")
+theme_override_font_sizes/font_size = 20
+text = "CREDITOS:     DAVID SOUZA, EDILTON LOUZADA, IRAN CONCEIAO E ISMAEL RODRIGUES"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="ColorRect/Button" to="ColorRect/Button" method="_on_acerto_5_play_pressed"]
+[connection signal="pressed" from="ColorRect/Button" to="ColorRect/Button" method="_on_pressed"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://3gkhfopl4v32"]
+
+[ext_resource type="AudioStream" uid="uid://ccabpf6ipgq0k" path="res://sounds/Quiz Background.mp3" id="1_5nluu"]
+
+[node name="SoundFases" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_5nluu")

@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0206ge78ugrx"]
+
+[ext_resource type="PackedScene" uid="uid://i720o5tc236e" path="res://cenas/fases/fase - 4 .tscn" id="1_2j22w"]
+[ext_resource type="Script" path="res://proxima_fase.gd" id="1_f8fki"]
+[ext_resource type="AudioStream" uid="uid://dfc721qmqpbke" path="res://sounds/Celebration Sound Effect (320).mp3" id="3_b84gu"]
+
+[node name="TextureRect" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="back- fase4" parent="." instance=ExtResource("1_2j22w")]
+layout_mode = 1
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+title = ""
+initial_position = 2
+size = Vector2i(739, 418)
+visible = true
+borderless = true
+dialog_text = "
+
+                                                                              
+                                                                             Parabéns! 🎊
+ 
+                          Você acertou pois a proposição 'P → Q' é uma implicação lógica,
+onde 'P' representa a condição antecedente (se Plutão foi reclassificado como planeta anão) e
+         'Q' representa a condição consequente (então a Lua é o satélite natural da Terra).
+
+                                         Você está autorizado para entrar planeta Terra!🚀
+
+                          Você conseguiu acertar todas as questões e salvou o astronauta👩‍🚀
+                                              
+                                                                              
+"
+script = ExtResource("1_f8fki")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_b84gu")
+volume_db = -21.86
+autoplay = true
+
+[connection signal="confirmed" from="AcceptDialog" to="AcceptDialog" method="_on_acerto_4_play_pressed"]

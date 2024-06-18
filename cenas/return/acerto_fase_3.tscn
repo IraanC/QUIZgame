@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://divhcjsd4sav0"]
+
+[ext_resource type="Script" path="res://proxima_fase.gd" id="1_sliwm"]
+[ext_resource type="PackedScene" uid="uid://b3olsa2awxesy" path="res://cenas/fases/fase - 3.tscn" id="2_388sj"]
+
+[node name="TextureRect" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+title = ""
+initial_position = 2
+size = Vector2i(733, 418)
+visible = true
+borderless = true
+ok_button_text = "Continuar🚀 "
+dialog_text = "
+                                                                 Parabéns Astronauta 👩‍🚀
+
+                                                               A afirmativa é verdadeira.
+                                             A operação lógica 'P ∨ Q' é uma disjunção,
+                                         que é a operação \"ou\" em lógica proposicional.
+                                         A disjunção de duas proposições é verdadeira
+                                    se pelo menos uma das proposições for verdadeira.
+
+                                     Você está autorizado a passar para o proximo planeta!🚀
+
+                                                Aperte Continuar e vá ao proximo planeta
+
+                                                                             Boa Sorte! "
+script = ExtResource("1_sliwm")
+
+[node name="Panel" parent="." instance=ExtResource("2_388sj")]
+layout_mode = 1
+
+[connection signal="confirmed" from="AcceptDialog" to="AcceptDialog" method="_on_acerto_3_play_pressed"]

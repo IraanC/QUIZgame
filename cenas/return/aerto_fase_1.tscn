@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://601p1rxmvfki"]
+
+[ext_resource type="PackedScene" uid="uid://co4ktxnnfnk2c" path="res://cenas/fases/fase - 1 .tscn" id="1_oxphb"]
+[ext_resource type="Script" path="res://proxima_fase.gd" id="1_qqlrf"]
+
+[node name="TextureRect" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+title = ""
+initial_position = 1
+size = Vector2i(733, 400)
+visible = true
+borderless = true
+ok_button_text = "Continuar 🚀"
+dialog_text = "
+
+                                                                Parabéns Astronauta 👩‍🚀
+
+           Você acertou pois a negação de uma proposição feita invertendo a sua veracidade.
+
+                                  Você está autorizado a passar para o proximo planeta!🚀
+
+                                              Aperte Continuar e vá ao proximo planeta
+
+                                                                             Boa Sorte! "
+script = ExtResource("1_qqlrf")
+
+[node name="fase1" parent="." instance=ExtResource("1_oxphb")]
+layout_mode = 1
+
+[connection signal="confirmed" from="AcceptDialog" to="AcceptDialog" method="_on_acerto_1_play_pressed"]

@@ -1,0 +1,379 @@
+[gd_scene load_steps=22 format=3 uid="uid://dk6rhj5ik8dja"]
+
+[ext_resource type="Texture2D" uid="uid://b1vg57ohyn835" path="res://img/bg_espaco.jpg" id="1_qjjwb"]
+[ext_resource type="Texture2D" uid="uid://ce5nfmgn3er1o" path="res://img/marte.png" id="2_a0dg2"]
+[ext_resource type="Texture2D" uid="uid://dpkhcd8gx5nxw" path="res://img/mercurio.png" id="3_wuv8d"]
+[ext_resource type="Texture2D" uid="uid://ckpf82qw0v08p" path="res://img/netuno.png" id="4_4d3f8"]
+[ext_resource type="Texture2D" uid="uid://cm24vbiox217u" path="res://img/pluto.png" id="5_ey353"]
+[ext_resource type="Texture2D" uid="uid://dw3xul6tutwgd" path="res://img/planetaterrraaa.png" id="6_n6w81"]
+[ext_resource type="Script" path="res://scripts/TextureRect1.gd" id="7_grhc0"]
+[ext_resource type="Texture2D" uid="uid://qbe7buo74tpu" path="res://seta retornar.png" id="8_bye7y"]
+[ext_resource type="Script" path="res://cenas/back.gd" id="9_7kwss"]
+[ext_resource type="Texture2D" uid="uid://oew8jvi7gg2b" path="res://img/spaceRockets_002.png" id="10_pkdk5"]
+[ext_resource type="AudioStream" uid="uid://dejg8p31p6dre" path="res://sounds/efeito sonoro, espaço - sound effect, space - 効果音、空間 (320).mp3" id="11_pwnjq"]
+
+[sub_resource type="Animation" id="Animation_a4glk"]
+resource_name = "foguete"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-31, 633), Vector2(128, 488)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(50, 99), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.715585]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hg7kb"]
+_data = {
+"foguete": SubResource("Animation_a4glk")
+}
+
+[sub_resource type="Animation" id="Animation_btlma"]
+resource_name = "foguete2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/foguete:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(280, 510), Vector2(480, 400), Vector2(480, 330), Vector2(450, 250)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/foguete:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(40, 79.2), Vector2(50, 99), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect/foguete:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.22173, 1.41372, 1.25664, -0.785398]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_601p7"]
+_data = {
+"foguete2": SubResource("Animation_btlma")
+}
+
+[sub_resource type="Animation" id="Animation_38oue"]
+resource_name = "foguete3"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("foguete:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(500, 225), Vector2(675, 145)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("foguete:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(20, 39.6), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("foguete:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0472]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qofi3"]
+_data = {
+"foguete3": SubResource("Animation_38oue")
+}
+
+[sub_resource type="Animation" id="Animation_cb7rq"]
+resource_name = "foguete4"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("foguete:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(700, 169), Vector2(950, 234)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("foguete:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(20, 39.6), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("foguete:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.8326]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tndn4"]
+_data = {
+"foguete4": SubResource("Animation_cb7rq")
+}
+
+[sub_resource type="Animation" id="Animation_xjibx"]
+resource_name = "foguete5"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("foguete:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 250.5), Vector2(1045, 340.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("foguete:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(20, 39.6), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("foguete:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.44346]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5we61"]
+_data = {
+"foguete5": SubResource("Animation_xjibx")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_right = 1.114
+anchor_bottom = 1.077
+offset_right = -131.328
+offset_bottom = -49.896
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_qjjwb")
+expand_mode = 1
+
+[node name="TextureRect1" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 308.0
+offset_right = 476.0
+offset_bottom = 702.0
+scale = Vector2(0.666709, 0.663111)
+texture = ExtResource("2_a0dg2")
+expand_mode = 1
+script = ExtResource("7_grhc0")
+
+[node name="go_marte" type="AnimationPlayer" parent="TextureRect/TextureRect1"]
+root_node = NodePath("../../foguete")
+libraries = {
+"": SubResource("AnimationLibrary_hg7kb")
+}
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 118.0
+offset_right = 550.0
+offset_bottom = 318.0
+texture = ExtResource("3_wuv8d")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 638.0
+offset_top = 62.0
+offset_right = 788.0
+offset_bottom = 212.0
+texture = ExtResource("4_4d3f8")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 906.0
+offset_top = 174.0
+offset_right = 1006.0
+offset_bottom = 274.0
+texture = ExtResource("5_ey353")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1032.0
+offset_top = 320.0
+offset_right = 1082.0
+offset_bottom = 370.0
+texture = ExtResource("6_n6w81")
+expand_mode = 1
+
+[node name="back" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.222
+anchor_top = 0.395
+anchor_right = 0.222
+anchor_bottom = 0.395
+offset_left = 764.256
+offset_top = 262.04
+offset_right = 884.256
+offset_bottom = 382.04
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("8_bye7y")
+ignore_texture_size = true
+script = ExtResource("9_7kwss")
+
+[node name="foguete" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = -31.0
+offset_top = 633.0
+offset_right = 19.0
+offset_bottom = 732.0
+rotation = 0.715585
+texture = ExtResource("10_pkdk5")
+expand_mode = 1
+
+[node name="indo para mercurio" type="AnimationPlayer" parent="TextureRect"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_601p7")
+}
+
+[node name="indo para netuno" type="AnimationPlayer" parent="TextureRect"]
+libraries = {
+"": SubResource("AnimationLibrary_qofi3")
+}
+
+[node name="indo para plutão" type="AnimationPlayer" parent="TextureRect"]
+libraries = {
+"": SubResource("AnimationLibrary_tndn4")
+}
+
+[node name="indo para terra" type="AnimationPlayer" parent="TextureRect"]
+libraries = {
+"": SubResource("AnimationLibrary_5we61")
+}
+
+[node name="AcceptDialog" type="AcceptDialog" parent="TextureRect"]
+initial_position = 2
+size = Vector2i(700, 200)
+visible = true
+borderless = true
+ok_button_text = "Começar"
+dialog_text = "                                  Ajude o astronauta voltar para o planeta Terra. 
+
+                Responda corretamente as questões sobre lógica proposicional para
+               ir passando pelos planetas Marte, Mercurio, Netuno e Pluto até chegar 
+                     ao planeta terra e salvar o astronauta que está preso na órbita"
+dialog_close_on_escape = false
+dialog_autowrap = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_pwnjq")
+volume_db = -10.024
+autoplay = true

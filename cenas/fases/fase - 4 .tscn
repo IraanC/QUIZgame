@@ -1,0 +1,163 @@
+[gd_scene load_steps=7 format=3 uid="uid://i720o5tc236e"]
+
+[ext_resource type="Texture2D" uid="uid://b1vg57ohyn835" path="res://img/bg_espaco.jpg" id="1_fg80c"]
+[ext_resource type="FontFile" uid="uid://b6lbh1sjsx8w1" path="res://Perfect DOS VGA 437 Win.ttf" id="2_1paxl"]
+[ext_resource type="Texture2D" uid="uid://cx8870ykl50ql" path="res://img/OIG3.WZ-removebg-preview (1).png" id="2_jix3p"]
+[ext_resource type="Script" path="res://acerto_fase_4.gd" id="3_cg4k6"]
+[ext_resource type="AudioStream" uid="uid://ccabpf6ipgq0k" path="res://sounds/Quiz Background.mp3" id="5_vtioy"]
+
+[sub_resource type="GDScript" id="GDScript_tin5y"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+func _on_btn2_play_pressed():
+	var tree = get_tree()
+	tree.change_scene_to_file(\"res://cenas/return/erro_fase_4.tscn\") 
+"
+
+[node name="fase4" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_fg80c")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 140.0
+offset_top = -51.0
+offset_right = -116.0
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jix3p")
+expand_mode = 1
+
+[node name="ColorRect2" type="ColorRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 36.0
+offset_right = 793.0
+offset_bottom = 606.0
+color = Color(0.188235, 0.188235, 0.188235, 0.937255)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 42.0
+offset_right = 781.0
+offset_bottom = 346.0
+theme_override_fonts/font = ExtResource("2_1paxl")
+theme_override_font_sizes/font_size = 24
+text = "          FASE PLUTÃO
+                          Se 'P: Plutão foi reclassificado como planeta anão' e 'Q: A Lua é o satélite natural da Terra', qual é a proposição 'P → Q'?"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="Label"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = 177.0
+offset_right = 7.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1paxl")
+theme_override_font_sizes/font_size = 17
+text = "B) Se Plutão foi reclassificado
+como planeta anão,
+então a Lua é o satélite natural da Terra"
+alignment = 0
+text_overrun_behavior = 2
+script = ExtResource("3_cg4k6")
+
+[node name="Button2" type="Button" parent="Label"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = 261.0
+offset_right = 6.0
+offset_bottom = 335.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1paxl")
+theme_override_font_sizes/font_size = 17
+text = "C) Plutão foi reclassificado
+como planeta anão
+ou a Lua é o satélite natural da Terra
+"
+alignment = 0
+text_overrun_behavior = 2
+script = SubResource("GDScript_tin5y")
+
+[node name="Button3" type="Button" parent="Label"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 100.0
+offset_right = 7.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1paxl")
+theme_override_font_sizes/font_size = 17
+text = "A) Plutão foi reclassificado
+como planeta anão
+e a Lua é o satélite natural da Terra
+"
+alignment = 0
+text_overrun_behavior = 2
+script = SubResource("GDScript_tin5y")
+
+[node name="Button4" type="Button" parent="Label"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = 338.0
+offset_right = 9.0
+offset_bottom = 412.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1paxl")
+theme_override_font_sizes/font_size = 17
+text = "D) Se a Lua é o satélite natural
+da Terra, então Plutão foi reclassificado
+como planeta anão"
+alignment = 0
+text_overrun_behavior = 2
+script = SubResource("GDScript_tin5y")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vtioy")
+volume_db = -20.0
+
+[connection signal="pressed" from="Label/Button" to="Label/Button" method="_on_btn2_play_pressed"]
+[connection signal="pressed" from="Label/Button2" to="Label/Button2" method="_on_btn2_play_pressed"]
+[connection signal="pressed" from="Label/Button3" to="Label/Button3" method="_on_btn2_play_pressed"]
+[connection signal="pressed" from="Label/Button4" to="Label/Button4" method="_on_btn2_play_pressed"]

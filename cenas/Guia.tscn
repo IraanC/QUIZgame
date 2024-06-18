@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://v1saltlmvgb7"]
+
+[ext_resource type="PackedScene" uid="uid://d1w58xojkqu67" path="res://cenas/main.tscn" id="1_bttat"]
+
+[node name="Guia" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="main" parent="." instance=ExtResource("1_bttat")]
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+title = "Guia"
+initial_position = 2
+size = Vector2i(911, 574)
+visible = true
+dialog_text = "Olá Astronauta 👩‍🚀,
+Você está convidado para uma viagem interestelar pelo universo da Lógica Proposicional! 
+Prepare-se para uma aventura emocionante e desafiadora 🚀✨
+                
+Antes de começarmos vou te explicar as regras da nossa Viagem pela Lógica Proposicional
+  
+1. As questões podem abranger diferentes aspectos da lógica proposicional,
+incluindo negações, conjunções, disjunções, implicações e equivalências.
+2. Você terá uma única tentativa para responder a cada questão. Responda com atenção!
+3. Algumas questões podem conter dicas para ajudar.
+Utilize-as sabiamente, pois nem todas as questões terão dicas disponíveis.
+4. Mantenha-se atento(a) e focado(a).
+Esta é uma missão interativa que exige sua total concentração.
+                
+Prepare-se para explorar os confins da lógica e boa sorte em sua jornada intergaláctica pela Lógica Proposicional."

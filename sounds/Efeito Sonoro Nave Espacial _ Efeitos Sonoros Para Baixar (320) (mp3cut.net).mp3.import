@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cx255nbfvllvs"
+path="res://.godot/imported/Efeito Sonoro Nave Espacial _ Efeitos Sonoros Para Baixar (320) (mp3cut.net).mp3-8220bd22e1b5f424de7e541b083f3931.mp3str"
+
+[deps]
+
+source_file="res://sounds/Efeito Sonoro Nave Espacial _ Efeitos Sonoros Para Baixar (320) (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/Efeito Sonoro Nave Espacial _ Efeitos Sonoros Para Baixar (320) (mp3cut.net).mp3-8220bd22e1b5f424de7e541b083f3931.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://mghwv41cog72"]
+
+[ext_resource type="AudioStream" uid="uid://dnyhkhpfjf32e" path="res://sounds/nave-espacial (mp3cut.net).mp3" id="1_vfq1j"]
+[ext_resource type="PackedScene" uid="uid://co4ktxnnfnk2c" path="res://cenas/fases/fase - 1 .tscn" id="2_t01s2"]
+
+[node name="TextureRect" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+title = ""
+initial_position = 2
+size = Vector2i(733, 444)
+visible = true
+borderless = true
+dialog_text = "
+
+                                                                         Que pena  😓😓
+
+                               Você ainda não está autorizado a ir ao proximo planeta 😓
+
+             Leia cuidadosamente a proposição dada e identifique se ela utiliza a operação
+             \"ou\" (disjunção), \"e\" (conjunção), \"se... então\" (implicação) ou \"não\" (negação).
+
+    Compreender a operação lógica correta é essencial para selecionar a resposta adequada
+
+                                            Mas você pode tentar novamente continuar 
+
+                                                      Tenha mais atenção na  proxima !"
+dialog_close_on_escape = false
+dialog_autowrap = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_vfq1j")
+autoplay = true
+
+[node name="fase1" parent="." instance=ExtResource("2_t01s2")]
+layout_mode = 1

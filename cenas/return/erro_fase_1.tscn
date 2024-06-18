@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpjdyho5vp02i"]
+
+[ext_resource type="AudioStream" uid="uid://dnyhkhpfjf32e" path="res://sounds/nave-espacial (mp3cut.net).mp3" id="1_qdgra"]
+[ext_resource type="PackedScene" uid="uid://co4ktxnnfnk2c" path="res://cenas/fases/fase - 1 .tscn" id="2_8xbw5"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+title = ""
+initial_position = 2
+size = Vector2i(733, 400)
+visible = true
+borderless = true
+dialog_text = "
+
+                                                                         Que pena  😓😓
+
+    Você não acertou pois a negação de uma proposição é feita invertendo a sua veracidade.
+
+                               Você ainda não está aoutorizado a ir ao proximo planeta 😓
+
+                                             Mas você  pode tentar novamente Continuar 
+  
+                                                        Tenha mais atenção na Proxima !"
+dialog_close_on_escape = false
+dialog_autowrap = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AcceptDialog"]
+stream = ExtResource("1_qdgra")
+autoplay = true
+
+[node name="fase1" parent="." instance=ExtResource("2_8xbw5")]
+layout_mode = 1
+offset_right = 1115.0
+offset_bottom = 611.0

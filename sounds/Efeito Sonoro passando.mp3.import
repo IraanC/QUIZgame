@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4x4ow2yx485j"
+path="res://.godot/imported/Efeito Sonoro passando.mp3-27b2dbde3f6cfa05b63a2a75831a6dba.mp3str"
+
+[deps]
+
+source_file="res://sounds/Efeito Sonoro passando.mp3"
+dest_files=["res://.godot/imported/Efeito Sonoro passando.mp3-27b2dbde3f6cfa05b63a2a75831a6dba.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

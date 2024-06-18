@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://smjyj4tvgfou"]
+
+[ext_resource type="PackedScene" uid="uid://l8sqla01rsf7" path="res://cenas/fases/fase - 2 .tscn" id="1_2q2ym"]
+[ext_resource type="Script" path="res://proxima_fase.gd" id="1_gbju2"]
+
+[node name="TextureRect" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="fase2" parent="." instance=ExtResource("1_2q2ym")]
+layout_mode = 1
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+title = ""
+initial_position = 2
+size = Vector2i(733, 400)
+visible = true
+borderless = true
+ok_button_text = "Continuar 🚀 "
+dialog_text = "
+
+                                                                Parabéns Astronauta 👩‍🚀
+
+                       Você acertou pois na lógica proposicional, '∧' representa a conjunção, 
+                                     que é a operação lógica que resulta em verdadeiro
+                                apenas quando ambas as proposições são verdadeiras.
+
+                                  Você está autorizado a passar para o proximo planeta!🚀
+
+                                              Aperte Continuar e vá ao proximo planeta
+
+                                                                             Boa Sorte! "
+script = ExtResource("1_gbju2")
+
+[connection signal="confirmed" from="AcceptDialog" to="AcceptDialog" method="_on_acerto_2_play_pressed"]

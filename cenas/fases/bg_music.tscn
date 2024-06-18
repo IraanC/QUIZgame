@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://eeseb3fjha2a"]
+
+[ext_resource type="AudioStream" uid="uid://ccabpf6ipgq0k" path="res://sounds/Quiz Background.mp3" id="1_cxf0i"]
+
+[node name="BgMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_cxf0i")
+autoplay = true

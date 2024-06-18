@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1w58xojkqu67"]
+
+[ext_resource type="Texture2D" uid="uid://hsir7yw5wcw6" path="res://img/inicial.jpg" id="1_xkkv2"]
+[ext_resource type="Texture2D" uid="uid://d10y3igxxonuy" path="res://img/astronauta.png" id="2_5q1cx"]
+[ext_resource type="Script" path="res://scripts/Control.gd" id="3_oq7w3"]
+[ext_resource type="FontFile" uid="uid://b4cqvb4syyox4" path="res://CorporationGamesStraight.otf" id="3_wl026"]
+[ext_resource type="AudioStream" uid="uid://drwhpfw8vmog1" path="res://sounds/bgmain.mp3" id="5_jmwmj"]
+[ext_resource type="Script" path="res://cenas/btn_play.gd" id="5_rgihm"]
+[ext_resource type="AudioStream" uid="uid://b4x4ow2yx485j" path="res://sounds/Efeito Sonoro passando.mp3" id="6_7d6ke"]
+
+[node name="main" type="CanvasLayer"]
+
+[node name="background" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="img-back" type="TextureRect" parent="background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xkkv2")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="background/img-back"]
+layout_mode = 0
+offset_left = -134.0
+offset_top = -80.0
+offset_right = 672.0
+offset_bottom = 500.0
+texture = ExtResource("2_5q1cx")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_oq7w3")
+
+[node name="btn_play" type="Button" parent="Control"]
+custom_minimum_size = Vector2(50, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 393.0
+offset_top = 339.0
+offset_right = 747.0
+offset_bottom = 419.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_wl026")
+theme_override_font_sizes/font_size = 50
+text = "PLAY
+"
+script = ExtResource("5_rgihm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control/btn_play"]
+stream = ExtResource("6_7d6ke")
+volume_db = -21.301
+
+[node name="btn_guia" type="Button" parent="Control"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 413.0
+offset_top = 452.0
+offset_right = 727.0
+offset_bottom = 532.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_wl026")
+theme_override_font_sizes/font_size = 50
+text = "GUIA
+"
+icon_alignment = 1
+script = ExtResource("5_rgihm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control/btn_guia"]
+stream = ExtResource("6_7d6ke")
+volume_db = -21.301
+
+[node name="Label" type="Label" parent="."]
+offset_left = 438.0
+offset_top = 154.0
+offset_right = 1125.0
+offset_bottom = 319.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("3_wl026")
+theme_override_font_sizes/font_size = 40
+text = "DESAFIOS LOGICOS DO COSMOS: A JORNADA DE RETORNO A TERRA"
+autowrap_mode = 2
+
+[node name="bg_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jmwmj")
+volume_db = -14.667
+autoplay = true
+
+[connection signal="mouse_entered" from="Control/btn_play" to="Control/btn_play" method="_ready"]
+[connection signal="pressed" from="Control/btn_play" to="Control" method="_on_btn_play_pressed"]
+[connection signal="pressed" from="Control/btn_guia" to="Control" method="_on_btn_guia_pressed"]
